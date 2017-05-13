@@ -1,6 +1,25 @@
 <html>
   <head></head>
-  <body>
-    <h1>Caesar Cipher</h1>
+
+  <body  align='center'>
+    <style>
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    </style>
+
+    <a href="/"><h1>Caesar Cipher</h1></a>
+
+    <form action='submit'>
+      Enter your message:<input type='text' name='post[message]' autofocus required placeholder='<%= @message %>'>
+      Shift factor:<input type='number' name='post[factor]' value='<%= @factor %>' required>
+      <input type='submit'>
+    </form>
+
+    <% if defined?(@string) && !@string.empty? %>
+      <p>Your encrypted message:</p>
+      <%= @string %>
+    <% end %>
   </body>
 </html>
